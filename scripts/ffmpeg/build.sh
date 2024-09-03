@@ -41,9 +41,18 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --strip=${FAM_STRIP} \
   --extra-cflags="-O3 -fPIC $DEP_CFLAGS" \
   --extra-ldflags="$DEP_LD_FLAGS" \
-  --enable-shared \
-  --disable-static \
-  --disable-vulkan \
+  --disable-shared \
+  --enable-static \
+  --disable-runtime-cpudetect \
+  --disable-v4l2-m2m \
+  --disable-doc \
+  --disable-debug \
+  --disable-ffprobe \
+  --disable-ffplay \
+  --enable-asm \
+  --enable-neon \
+  --enable-jni \
+  --enable-mediacodec \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
   $ADDITIONAL_COMPONENTS || exit 1

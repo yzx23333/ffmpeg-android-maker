@@ -26,14 +26,12 @@ SUPPORTED_LIBRARIES_FREE=(
   "libfreetype"
   "libfribidi"
   "mbedtls"
-  "libbluray"
   "libxml2"
 )
 
 # All GPL libraries that are supported
 SUPPORTED_LIBRARIES_GPL=(
   "libx264"
-  "libx265"
 )
 
 for argument in "$@"; do

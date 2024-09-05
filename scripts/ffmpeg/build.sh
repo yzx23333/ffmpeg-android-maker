@@ -41,6 +41,7 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --strip=${FAM_STRIP} \
   --extra-cflags="-O3 -fPIC $DEP_CFLAGS" \
   --extra-ldflags="$DEP_LD_FLAGS" \
+  --extra-libs="-lgunstl_static -lpthread -lm -lpng" \
   --disable-shared \
   --enable-static \
   --disable-runtime-cpudetect \

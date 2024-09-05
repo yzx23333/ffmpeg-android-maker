@@ -22,9 +22,6 @@ ${CMAKE_EXECUTABLE} ../source \
  -DENABLE_PIC=ON \
  -DENABLE_SHARED=OFF \
  -DENABLE_CLI=OFF \
- -DBUILD_SHARED_LIBS=OFF \
- -DCMAKE_CXX_FLAGS='-static-libgcc -static-libstdc++' \
- -DCMAKE_EXE_LINKER_FLAGS='-static' \
  $EXTRA_CMAKE_ARG
 
 EXTRA_SED_ARG=""

@@ -23,7 +23,7 @@ done
 
 # Referencing dependencies without pkgconfig
 DEP_CFLAGS="-I${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/include -static-libstdc++"
-DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
+DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS -static-libstdc++"
 
 ./configure \
   --prefix=${BUILD_DIR_FFMPEG}/${ANDROID_ABI} \

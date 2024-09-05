@@ -11,16 +11,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache
+        uses: actions/cache@v4
+        with:
+          path: sources
+          key: ${{ runner.os }}-sources-cache
+
       - name: Setup the environment
         run: |
           sudo pip3 install meson==1.5.1
+          sudo apt update
           sudo apt -y install nasm ninja-build
 
       - name: Executing the script
         run: |
           export ANDROID_SDK_HOME=$ANDROID_HOME
           export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
-          ./ffmpeg-android-maker.sh -all-free -all-gpl -android=30 -abis=${{ matrix.abi }}
+          ./ffmpeg-android-maker.sh --source-git-branch=master -all-free -all-gpl -android=30 -abis=${{ matrix.abi }}
 
       - name: Upload build
         uses: actions/upload-artifact@v4
